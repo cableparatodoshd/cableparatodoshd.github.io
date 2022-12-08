@@ -1,23 +1,34 @@
+<!-- jw player -->
 
- <!-- clappr player -->
-<script src='https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js'></script>
-<script src='https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.js'></script>
-<script src='https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js'></script> 
+<script type='text/javascript' src="https://ssl.p.jwpcdn.com/player/v/8.25.8/jwplayer.js"></script>
+<script type='text/javascript'>jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo'</script>
 <div class='post-header'>
 </div>
 <div class='post-body post-content'>
 <div class="cuadro-repro">
 <div id="player"></div>
 <script>
-var player = new Clappr.Player({  
-source: "https://edge-mix01-cen.cvattv.com.ar/live/c3eds/Space/SA_Live_dash_enc/Space.mpd",
-plugins: [DashShakaPlayback, LevelSelector], shakaConfiguration: { // 'key-id-in-hex' : 'key-in-hex',
-drm: {clearKeys: {"0942e4ecd1bd3567e8f9447f45c20a12" : "efca6264f04cf7373de0c30ec79fe909"} }},
-autoPlay: true,
-width: "100%",
-height:"100%",
-poster: "https://cableparatodos.weebly.com/uploads/1/3/6/9/136932469/playerr_orig.jpg",
-parentId: "#player",
+var player = jwplayer("player");
+player.setup({
+  default: true,label:"360p",title : "REPRODUCTOR", description: "EN VIVO",
+file: "https://dtvott-akaws.akamaized.net/live_1251/DASH/manifest.mpd",
+drm: {clearkey: {keyId:"34d62b22efc63f659eac5ba82289882d", key:"696de7a82257ddb51ed3fdec04b6ec8b"}},
+width: "100%", 
+height: "100%",
+aspectratio: "16:9", 
+autostart: false,
+   cast: {}
+           ,
+    skin: {
+       name: "bekle",
+       active: "red",
+       inactive: "white",
+       background: ""
+    },
+image: " ",
 });
+player.on("play", function(e) {player.setCurrentAudioTrack("0");});
+
 </script>
-</div>
+</body>
+</html>
