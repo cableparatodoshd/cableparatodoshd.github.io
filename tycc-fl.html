@@ -1,31 +1,64 @@
-<!-- Composite End -->
-<script type="text/javascript" src="https://ssl.p.jwpcdn.com/player/v/8.25.8/jwplayer.js"></script>
-<script type="text/javascript">jwplayer.key="XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo"</script>
-<body style="margin:0; padding:0;">
-<div id="player" style="background-color:blue; color:#fff;">[v0.1] Cargando Reproductor</div>
-<script type="text/javascript">
-		function getData(e){e=e.replace(/[\[]/,"[").replace(/[\]]/,"]");var a=new RegExp("[?&]"+e+"=([^&#]*)").exec(location.search);return null===a?"":decodeURIComponent(a[1].replace(/\+/g," "))}
+<html>
+	<head>
+		
+		<title>tv</title>
+<meta content='width=device-width, initial-scale=1' name='viewport'>	
+<meta http-equiv="Content-Language" content="es" />	
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">	
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0QDELNE5D8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-		jwplayer("player").setup({
-			playlist: [{
-				"title": "REPRODUCTOR", "description": "EN VIVO", "image": "",
-				"sources": [{
-					"default": true,
-					"label": "0",
-					"type": "dash",
-						"file": ("https://edge-vod02-hr.cvattv.com.ar/live/c7eds/TyCSport/SA_Live_dash_enc_2A_wl/TyCSport.mpd"),
-					"drm": {"clearkey": {"keyId": atob("MmIyMWM4ZmE5YTMyOWNjZTMxMWE0YzRhNGFhOTk2YTE="), "key": atob("Y2MyM2VhMWZiMzI2MjlmOWUxZjQ4YzhkZWVhZTNlNWI=")}}
-				}]
-			}],
-			width: "100%", height: "100%", aspectratio: "16:9", autostart: false, cast: {},
-		});
+  gtag('config', 'G-0QDELNE5D8');
+</script>
+	</head>
+
+<body  style="padding: 0px; margin:0px;">
+<script src="https://static.grupoz.cl/jwplayer/v8/8.5/jwplayer.js"></script>
+<script> jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
+</script>
+<div id="player"></div>
+<script>
+
+    var playerInstance = jwplayer("player");
+
+    playerInstance.setup({
+
+        playlist: [{
+            "title": "REPRODUCTOR",
+          "description": "EN VIVO",
+            "sources": [
+                {
+                    "default": false,
+                    "type": "dash",
+                    "file": 'https://dtvott-abc.akamaized.net/dash_live_1056/manifest.mpd',
+                    "drm": {
+                        "clearkey": {keyId: "00a775d1b96b5951b3c3ab5799f9868e", key: "3a56df0047dd709388c606f9ff2fbadd" }
+                    },
+                    "label": "0"
+                }
+            ]
+        }],
+        width: "100%",
+        height: "100%",
+        aspectratio: "16:9",
+        allowfullscreen: true,
+autostart: false,
+			 
+       skin: {
+       name: "black",
+       active: "RED", 
+       inactive: "GOLD",
+       background: "black"
+    }
+       }
+       );
+       
 		jwplayer("player").on("play", function(e){jwplayer("player").setCurrentAudioTrack(1)});
 	</script>
+    <body>
 
-
-<div style='clear: both;'></div>
-</div>
-<div class='post-footer'>
-<div class='post-footer-line post-footer-line-1'>
-<span class='post-author vcard'>
-</span>
+</html>
